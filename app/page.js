@@ -66,14 +66,11 @@ export default function Home() {
               textDecoration: "none",
               borderRadius: "100px",
               boxShadow: "0 0 18px #1ffaff90, 0 0 44px #fb00ff70",
-              transition: "transform 0.12s",
               textTransform: "uppercase",
               letterSpacing: "0.04em",
               filter: "brightness(1.25)",
               outline: "2px solid #00f9ff55"
             }}
-            onMouseOver={e => e.currentTarget.style.transform = "scale(1.07)"}
-            onMouseOut={e => e.currentTarget.style.transform = "scale(1.00)"}
           >Join Open Mic</a>
           <a
             href="#"
@@ -86,14 +83,11 @@ export default function Home() {
               textDecoration: "none",
               borderRadius: "100px",
               boxShadow: "0 0 18px #fb00ff90, 0 0 44px #00f9ff70",
-              transition: "transform 0.12s",
               textTransform: "uppercase",
               letterSpacing: "0.04em",
               filter: "brightness(1.25)",
               outline: "2px solid #fb00ff55"
             }}
-            onMouseOver={e => e.currentTarget.style.transform = "scale(1.07)"}
-            onMouseOut={e => e.currentTarget.style.transform = "scale(1.00)"}
           >Submit Art/Meme</a>
         </div>
       </div>
