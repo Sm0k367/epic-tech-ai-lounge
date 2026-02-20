@@ -1,4 +1,12 @@
+"use client";
+import { useState } from "react"; // <-- Needed for React state
+
 export default function Home() {
+  const [liveMode, setLiveMode] = useState(true);
+
+  const liveEmbed = "https://www.youtube.com/embed/live_stream?channel=UC79Phi4kA_IQhYpQvG2imoQ";
+  const videoEmbed = "https://www.youtube.com/embed/4baEOAm80Is";
+
   return (
     <main
       style={{
@@ -13,11 +21,37 @@ export default function Home() {
       }}
     >
       <div style={{
-        marginTop: 40,
+        marginTop: 38,
         display: "flex",
         flexDirection: "column",
         alignItems: "center"
       }}>
+        <button
+          onClick={() => setLiveMode(mode => !mode)}
+          style={{
+            marginBottom: 30,
+            padding: "0.7rem 2rem",
+            fontSize: "1.07rem",
+            color: "#190a2d",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            background: liveMode
+              ? "linear-gradient(90deg,#fb00ff 0%, #00f9ff 100%)"
+              : "linear-gradient(90deg,#00f9ff 0%, #fb00ff 100%)",
+            letterSpacing: "0.04em",
+            border: "none",
+            borderRadius: "100px",
+            boxShadow: liveMode
+              ? "0 0 18px #fb00ffb5, 0 0 44px #00f9ff90"
+              : "0 0 18px #00f9ffb5, 0 0 44px #fb00ff90",
+            filter: "brightness(1.20)",
+            cursor: "pointer",
+            outline: "2px solid #fb00ff55",
+            transition: "all 0.15s cubic-bezier(.41,1.19,.62,1.02)"
+          }}
+        >
+          Switch to {liveMode ? "Video" : "Live"} Mode
+        </button>
         <img
           src="/epic-tech-ai-logo.png"
           alt="Epic Tech AI Logo"
@@ -112,9 +146,11 @@ export default function Home() {
         justifyContent: "center"
       }}>
         <iframe
-          src="https://www.youtube.com/embed/live_stream?channel=UC79Phi4kA_IQhYpQvG2imoQ"
-          title="Epic Tech AI Lounge - Live Stream"
-          allow="autoplay; encrypted-media"
+          width="100%"
+          height="100%"
+          src={liveMode ? liveEmbed : videoEmbed}
+          title={liveMode ? "Epic Tech AI Lounge - Live Stream" : "YouTube video player"}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           frameBorder={0}
           style={{
