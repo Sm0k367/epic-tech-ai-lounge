@@ -39,7 +39,7 @@ export default function Home() {
       }}>
         <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, width: "100%" }}>
           <iframe
-            src="https://www.youtube.com/embed/YOUR_STREAM_ID_HERE"
+            src="https://www.youtube.com/embed/4baEOAm80Is"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
